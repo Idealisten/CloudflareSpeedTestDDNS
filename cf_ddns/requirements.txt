@@ -1,0 +1,2 @@
+CloudFlare==2.11.7
+Requests==2.31.0
