@@ -54,9 +54,9 @@ for index, ip in enumerate(ip_list):
     try:
         cf.zones.dns_records.post(zone_id, data=dns_record)  # 添加 DNS 记录
         print('DNS 记录已成功添加!IP地址是{}'.format(ip))
-        tg_msg = tg_msg_tmp + 'DNS记录已成功添加!\nIP地址是:{}\n延迟是:{}\n速度是{}'.format(ip, latency_list[index], speed_list[index])
+        tg_msg = tg_msg_tmp + '【CF】{}的DNS记录已成功添加!\nIP地址是:{}\n延迟是:{}\n速度是{}'.format(domain_name, ip, latency_list[index], speed_list[index])
         r = requests.post(tg_msg)
     except CloudFlare.exceptions.CloudFlareAPIError as e:
         print('添加 DNS 记录失败:{}'.format(ip), e)
-        tg_msg = tg_msg_tmp + 'DNS记录添加失败!\nIP地址是失败:{} \n原因是{}'.format(ip, e)
+        tg_msg = tg_msg_tmp + '【CF】{}的DNS记录添加失败!\nIP地址是失败:{} \n原因是{}'.format(domain_name, ip, e)
         r = requests.post(tg_msg)
