@@ -72,6 +72,6 @@ for index, record in enumerate(dns_records):
 		# 关闭 socket 连接
 		client_socket.close()
 
-msg = '当前共有优选ip{}个，有效{}个，失效删除{}个'.format(len(dns_records), success, fail)
+msg = '【CF】当前共有优选ip{}个，有效{}个，失效删除{}个'.format(len(dns_records), success, fail)
 tg_msg = tg_msg_tmp + msg
 r = requests.post(tg_msg)
